@@ -29,31 +29,67 @@ function writePassword() {
   
   
   const lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
   const uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
   const numeric = ['0','1','2','3','4','5','6','7','8','9'];
+
   const special = ['"',' ','!','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\',','^','_','`','{','|','}','~',']'];
   
-  function askQuestions() {
-
-    var options = []
-
-    //window asks if the user would like lowercase letters randomized into the password
-    var confirmLowercase = window.confirm('Would you like lowercase letters randomized into your password? (Click "Ok" for yes or "Cancel" for no')
-
-    //if the user clicks "OK" then it adds a constant array of lowercase strings to the variable "options" to be used in the password
-    if (confirmLowercase) {
-      options=options.concat(uppercase)
-    }
 
 
-    //window asks if the user would like UPPERCASE letters randomized into the password
-    var confirmUppercase = window.confirm('Would you like UPPERCASE letters randomized into your password? (Click "Ok" for yes or "Cancel" for no')
+  //create empty string to add options into
+  var options = []
 
-    //if the user clicks "OK" then it adds a constant array of uppercase strings to the variable "options" to be used in the password
-    if (confirmUppercase) {
-     
-    }
-      
+  //window asks if the user would like lowercase letters randomized into the password
+  var confirmLowercase = window.confirm('Would you like lowercase letters randomized into your password? (Click "Ok" for yes or "Cancel" for no')
+
+  //if the user clicks "OK" then it adds a constant array of lowercase strings to the variable "options" to be used in the password
+  if (confirmLowercase) {
+    options=options.concat(lowercase)
+
+    console.log('lowercase letters added');
+  }
+
+  //window asks if the user would like UPPERCASE letters randomized into the password
+  var confirmUppercase = window.confirm('Would you like UPPERCASE letters randomized into your password? (Click "Ok" for yes or "Cancel" for no')
+
+  //if the user clicks "OK" then it adds a constant array of uppercase strings to the variable "options" to be used in the password
+  if (confirmUppercase) {
+    options=options.concat(uppercase)
+
+    console.log('uppercase letters added');
+  }
+    
+  //window asks if the user would like numbers randomized into the password
+  var confirmNumeric = window.confirm('Would you like numbers randomized into your password? (Click "Ok" for yes or "Cancel" for no')
+
+  //if the user clicks "OK" then it adds a constant array of uppercase strings to the variable "options" to be used in the password
+  if (confirmNumeric) {
+    options=options.concat(numeric)
+
+    console.log('numbers letters added');
+  }
+    
+  //window asks if the user would like special characters randomized into the password
+  var confirmSpecial = window.confirm('Would you like special characters randomized into your password? (Click "Ok" for yes or "Cancel" for no')
+
+  //if the user clicks "OK" then it adds a constant array of uppercase strings to the variable "options" to be used in the password
+  if (confirmSpecial) {
+    options=options.concat(special)
+
+    console.log('special characters added');
+  }
+
+  //prints array of possible options to randomize into the console for clarity
+  console.log(options);
+  
+  if (options = []); {
+    window.alert('You must select at least one group of characters to be randomized into the password!');
+
+    return;
+
+  }
 
 
   var password = generatePassword();
