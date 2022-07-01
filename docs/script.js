@@ -92,8 +92,8 @@ function generatePassword() {
     function password() {
 
       var text = "";
-      //added all possible characters that the password could potentially be
-      var potential = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 !"#$%&()*+,-./:;<=>?@[\]^_`{|}~'
+      //added all possible characters that the password could potentially be through the join function
+      var potential = options.join('');
       //created for loop that runs for the length of the chosen password length
       for (var i = 0; i < promptLength; i++)
         //used the mathrandom function and charAt function to randomize characters in the array
@@ -101,18 +101,14 @@ function generatePassword() {
       
       return text;
     }
+    var generatedpass = password();
     //console logs randomized password
-    console.log(password());
-  
+    console.log(generatedpass);
+    //cleaned up code to match variables
+    var passwordText = document.querySelector("#password");
+    passwordText.value = generatedpass;
   }
-  
-  generatePassword();
-
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", password);
+generateBtn.addEventListener("click", generatePassword);
 
