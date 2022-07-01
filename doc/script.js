@@ -103,6 +103,7 @@ function generatePassword() {
     }
     //console logs randomized password
     console.log(password());
+  
   }
   
   generatePassword();
