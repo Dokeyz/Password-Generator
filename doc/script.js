@@ -92,7 +92,7 @@ function generatePassword() {
     function password() {
 
       var text = "";
-      //added all possible characters that the password could potentially be
+      //added all possible characters that the password could potentially be through the join function
       var potential = options.join('');
       //created for loop that runs for the length of the chosen password length
       for (var i = 0; i < promptLength; i++)
@@ -101,9 +101,10 @@ function generatePassword() {
       
       return text;
     }
-    //console logs randomized password
     var generatedpass = password();
+    //console logs randomized password
     console.log(generatedpass);
+    //cleaned up code to match variables
     var passwordText = document.querySelector("#password");
     passwordText.value = generatedpass;
   }
